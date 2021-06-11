@@ -1,0 +1,774 @@
+Database changed
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.03 sec)
+
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.04 sec)
+
++--------------+--------------+------+-----+-----------+----------------+
+| Field        | Type         | Null | Key | Default   | Extra          |
++--------------+--------------+------+-----+-----------+----------------+
+| USER_ID      | int unsigned | NO   | PRI | NULL      | auto_increment |
+| USER_PICTURE | varchar(100) | YES  |     | team.jpg  |                |
+| USER_FNAME   | varchar(100) | NO   |     | NULL      |                |
+| USER_LNAME   | varchar(100) | NO   |     | NULL      |                |
+| USER_AGE     | int unsigned | YES  |     | 0         |                |
+| USER_DOB     | date         | NO   |     | NULL      |                |
+| USER_TYPE    | varchar(14)  | NO   |     | spectator |                |
++--------------+--------------+------+-----+-----------+----------------+
+7 rows in set (0.00 sec)
+
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| USER_ID        | int unsigned | NO   | PRI | NULL    |       |
+| MOFF_REFEREE   | tinyint(1)   | YES  |     | 1       |       |
+| MOFF_ORGANIZER | tinyint(1)   | YES  |     | 1       |       |
++----------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
++----------------------+----------------------+------+-----+---------+-------+
+| Field                | Type                 | Null | Key | Default | Extra |
++----------------------+----------------------+------+-----+---------+-------+
+| USER_ID              | int unsigned         | NO   | PRI | NULL    |       |
+| PLAYER_FOOT          | char(1)              | YES  |     | R       |       |
+| PLAYER_PCOUNT        | int unsigned         | YES  |     | 0       |       |
+| PLAYER_CAPTAIN_COUNT | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TWINS         | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TLOSSES       | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TDRAWS        | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_SCORED    | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_FOR       | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_AGAINST   | int unsigned         | YES  |     | 0       |       |
+| PLAYER_AVG_RATING    | double(2,1) unsigned | YES  |     | 0.0     |       |
++----------------------+----------------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
++-------------------+----------------------+------+-----+---------+-------+
+| Field             | Type                 | Null | Key | Default | Extra |
++-------------------+----------------------+------+-----+---------+-------+
+| GAME_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| TEAM_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| USER_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| PARC_POSITION     | varchar(5)           | NO   |     | NULL    |       |
+| PARC_GOALS_SCORED | int unsigned         | NO   |     | 0       |       |
+| PARC_CAPTAIN      | tinyint(1)           | YES  |     | 0       |       |
+| PARC_RATING       | double(2,1) unsigned | NO   |     | 0.0     |       |
++-------------------+----------------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
++----------------+--------------+------+-----+----------+----------------+
+| Field          | Type         | Null | Key | Default  | Extra          |
++----------------+--------------+------+-----+----------+----------------+
+| TEAM_ID        | int unsigned | NO   | PRI | NULL     | auto_increment |
+| TEAM_NAME      | varchar(250) | NO   |     | NULL     |                |
+| TEAM_LOGO      | varchar(10)  | YES  |     | team.jpg |                |
+| TEAM_FOUNDED   | date         | NO   |     | NULL     |                |
+| TEAM_PCOUNT    | int unsigned | YES  |     | 0        |                |
+| TEAM_WINS      | int unsigned | YES  |     | 0        |                |
+| TEAM_LOSSES    | int unsigned | YES  |     | 0        |                |
+| TEAM_DRAWS     | int unsigned | YES  |     | 0        |                |
+| TEAM_G_FOR     | int unsigned | YES  |     | 0        |                |
+| TEAM_G_AGAINST | int unsigned | YES  |     | 0        |                |
+| TEAM_G_DIFF    | int          | YES  |     | 0        |                |
+| TEAM_WIN_RATE  | double(4,2)  | YES  |     | 0.00     |                |
+| USER_ID        | int unsigned | NO   | MUL | NULL     |                |
++----------------+--------------+------+-----+----------+----------------+
+13 rows in set (0.00 sec)
+
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| GAME_ID    | int unsigned | NO   | PRI | NULL    |       |
+| TEAM_ID    | int unsigned | NO   | PRI | NULL    |       |
+| TEAM_SCORE | int          | NO   |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| GAME_ID   | int unsigned | NO   | PRI | NULL    | auto_increment |
+| USER_ID   | int unsigned | NO   | PRI | NULL    |                |
+| GAME_DATE | date         | NO   |     | NULL    |                |
+| GAME_TIME | time         | NO   |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+Database changed
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.03 sec)
+
++--------------+--------------+------+-----+-----------+----------------+
+| Field        | Type         | Null | Key | Default   | Extra          |
++--------------+--------------+------+-----+-----------+----------------+
+| USER_ID      | int unsigned | NO   | PRI | NULL      | auto_increment |
+| USER_PICTURE | varchar(100) | YES  |     | team.jpg  |                |
+| USER_FNAME   | varchar(100) | NO   |     | NULL      |                |
+| USER_LNAME   | varchar(100) | NO   |     | NULL      |                |
+| USER_AGE     | int unsigned | YES  |     | 0         |                |
+| USER_DOB     | date         | NO   |     | NULL      |                |
+| USER_TYPE    | varchar(14)  | NO   |     | spectator |                |
++--------------+--------------+------+-----+-----------+----------------+
+7 rows in set (0.00 sec)
+
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| USER_ID        | int unsigned | NO   | PRI | NULL    |       |
+| MOFF_REFEREE   | tinyint(1)   | YES  |     | 1       |       |
+| MOFF_ORGANIZER | tinyint(1)   | YES  |     | 1       |       |
++----------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
++----------------------+----------------------+------+-----+---------+-------+
+| Field                | Type                 | Null | Key | Default | Extra |
++----------------------+----------------------+------+-----+---------+-------+
+| USER_ID              | int unsigned         | NO   | PRI | NULL    |       |
+| PLAYER_FOOT          | char(1)              | YES  |     | R       |       |
+| PLAYER_PCOUNT        | int unsigned         | YES  |     | 0       |       |
+| PLAYER_CAPTAIN_COUNT | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TWINS         | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TLOSSES       | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TDRAWS        | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_SCORED    | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_FOR       | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_AGAINST   | int unsigned         | YES  |     | 0       |       |
+| PLAYER_AVG_RATING    | double(2,1) unsigned | YES  |     | 0.0     |       |
++----------------------+----------------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
++-------------------+----------------------+------+-----+---------+-------+
+| Field             | Type                 | Null | Key | Default | Extra |
++-------------------+----------------------+------+-----+---------+-------+
+| GAME_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| TEAM_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| USER_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| PARC_POSITION     | varchar(5)           | NO   |     | NULL    |       |
+| PARC_GOALS_SCORED | int unsigned         | NO   |     | 0       |       |
+| PARC_CAPTAIN      | tinyint(1)           | YES  |     | 0       |       |
+| PARC_RATING       | double(2,1) unsigned | NO   |     | 0.0     |       |
++-------------------+----------------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
++----------------+--------------+------+-----+----------+----------------+
+| Field          | Type         | Null | Key | Default  | Extra          |
++----------------+--------------+------+-----+----------+----------------+
+| TEAM_ID        | int unsigned | NO   | PRI | NULL     | auto_increment |
+| TEAM_NAME      | varchar(250) | NO   |     | NULL     |                |
+| TEAM_LOGO      | varchar(10)  | YES  |     | team.jpg |                |
+| TEAM_FOUNDED   | date         | NO   |     | NULL     |                |
+| TEAM_PCOUNT    | int unsigned | YES  |     | 0        |                |
+| TEAM_WINS      | int unsigned | YES  |     | 0        |                |
+| TEAM_LOSSES    | int unsigned | YES  |     | 0        |                |
+| TEAM_DRAWS     | int unsigned | YES  |     | 0        |                |
+| TEAM_G_FOR     | int unsigned | YES  |     | 0        |                |
+| TEAM_G_AGAINST | int unsigned | YES  |     | 0        |                |
+| TEAM_G_DIFF    | int          | YES  |     | 0        |                |
+| TEAM_WIN_RATE  | double(4,2)  | YES  |     | 0.00     |                |
+| USER_ID        | int unsigned | NO   | MUL | NULL     |                |
++----------------+--------------+------+-----+----------+----------------+
+13 rows in set (0.00 sec)
+
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| GAME_ID    | int unsigned | NO   | PRI | NULL    |       |
+| TEAM_ID    | int unsigned | NO   | PRI | NULL    |       |
+| TEAM_SCORE | int          | NO   |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| GAME_ID   | int unsigned | NO   | PRI | NULL    | auto_increment |
+| USER_ID   | int unsigned | NO   | PRI | NULL    |                |
+| GAME_DATE | date         | NO   |     | NULL    |                |
+| GAME_TIME | time         | NO   |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+Database changed
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.03 sec)
+
++--------------+--------------+------+-----+-----------+----------------+
+| Field        | Type         | Null | Key | Default   | Extra          |
++--------------+--------------+------+-----+-----------+----------------+
+| USER_ID      | int unsigned | NO   | PRI | NULL      | auto_increment |
+| USER_PICTURE | varchar(100) | YES  |     | team.jpg  |                |
+| USER_FNAME   | varchar(100) | NO   |     | NULL      |                |
+| USER_LNAME   | varchar(100) | NO   |     | NULL      |                |
+| USER_AGE     | int unsigned | YES  |     | 0         |                |
+| USER_DOB     | date         | NO   |     | NULL      |                |
+| USER_TYPE    | varchar(14)  | NO   |     | spectator |                |
++--------------+--------------+------+-----+-----------+----------------+
+7 rows in set (0.00 sec)
+
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| USER_ID        | int unsigned | NO   | PRI | NULL    |       |
+| MOFF_REFEREE   | tinyint(1)   | YES  |     | 1       |       |
+| MOFF_ORGANIZER | tinyint(1)   | YES  |     | 1       |       |
++----------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
++----------------------+----------------------+------+-----+---------+-------+
+| Field                | Type                 | Null | Key | Default | Extra |
++----------------------+----------------------+------+-----+---------+-------+
+| USER_ID              | int unsigned         | NO   | PRI | NULL    |       |
+| PLAYER_FOOT          | char(1)              | YES  |     | R       |       |
+| PLAYER_PCOUNT        | int unsigned         | YES  |     | 0       |       |
+| PLAYER_CAPTAIN_COUNT | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TWINS         | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TLOSSES       | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TDRAWS        | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_SCORED    | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_FOR       | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_AGAINST   | int unsigned         | YES  |     | 0       |       |
+| PLAYER_AVG_RATING    | double(2,1) unsigned | YES  |     | 0.0     |       |
++----------------------+----------------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
++-------------------+----------------------+------+-----+---------+-------+
+| Field             | Type                 | Null | Key | Default | Extra |
++-------------------+----------------------+------+-----+---------+-------+
+| GAME_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| TEAM_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| USER_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| PARC_POSITION     | varchar(5)           | NO   |     | NULL    |       |
+| PARC_GOALS_SCORED | int unsigned         | NO   |     | 0       |       |
+| PARC_CAPTAIN      | tinyint(1)           | YES  |     | 0       |       |
+| PARC_RATING       | double(2,1) unsigned | NO   |     | 0.0     |       |
++-------------------+----------------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
++----------------+--------------+------+-----+----------+----------------+
+| Field          | Type         | Null | Key | Default  | Extra          |
++----------------+--------------+------+-----+----------+----------------+
+| TEAM_ID        | int unsigned | NO   | PRI | NULL     | auto_increment |
+| TEAM_NAME      | varchar(250) | NO   |     | NULL     |                |
+| TEAM_LOGO      | varchar(10)  | YES  |     | team.jpg |                |
+| TEAM_FOUNDED   | date         | NO   |     | NULL     |                |
+| TEAM_PCOUNT    | int unsigned | YES  |     | 0        |                |
+| TEAM_WINS      | int unsigned | YES  |     | 0        |                |
+| TEAM_LOSSES    | int unsigned | YES  |     | 0        |                |
+| TEAM_DRAWS     | int unsigned | YES  |     | 0        |                |
+| TEAM_G_FOR     | int unsigned | YES  |     | 0        |                |
+| TEAM_G_AGAINST | int unsigned | YES  |     | 0        |                |
+| TEAM_G_DIFF    | int          | YES  |     | 0        |                |
+| TEAM_WIN_RATE  | double(4,2)  | YES  |     | 0.00     |                |
+| USER_ID        | int unsigned | NO   | MUL | NULL     |                |
++----------------+--------------+------+-----+----------+----------------+
+13 rows in set (0.01 sec)
+
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| GAME_ID    | int unsigned | NO   | PRI | NULL    |       |
+| TEAM_ID    | int unsigned | NO   | PRI | NULL    |       |
+| TEAM_SCORE | int          | NO   |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| GAME_ID   | int unsigned | NO   | PRI | NULL    | auto_increment |
+| USER_ID   | int unsigned | NO   | PRI | NULL    |                |
+| GAME_DATE | date         | NO   |     | NULL    |                |
+| GAME_TIME | time         | NO   |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+Database changed
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.03 sec)
+
++--------------+--------------+------+-----+-----------+----------------+
+| Field        | Type         | Null | Key | Default   | Extra          |
++--------------+--------------+------+-----+-----------+----------------+
+| USER_ID      | int unsigned | NO   | PRI | NULL      | auto_increment |
+| USER_PICTURE | varchar(100) | YES  |     | team.jpg  |                |
+| USER_FNAME   | varchar(100) | NO   |     | NULL      |                |
+| USER_LNAME   | varchar(100) | NO   |     | NULL      |                |
+| USER_AGE     | int unsigned | YES  |     | 0         |                |
+| USER_DOB     | date         | NO   |     | NULL      |                |
+| USER_TYPE    | varchar(14)  | NO   |     | spectator |                |
++--------------+--------------+------+-----+-----------+----------------+
+7 rows in set (0.01 sec)
+
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| USER_ID        | int unsigned | NO   | PRI | NULL    |       |
+| MOFF_REFEREE   | tinyint(1)   | YES  |     | 1       |       |
+| MOFF_ORGANIZER | tinyint(1)   | YES  |     | 1       |       |
++----------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
++----------------------+----------------------+------+-----+---------+-------+
+| Field                | Type                 | Null | Key | Default | Extra |
++----------------------+----------------------+------+-----+---------+-------+
+| USER_ID              | int unsigned         | NO   | PRI | NULL    |       |
+| PLAYER_FOOT          | char(1)              | YES  |     | R       |       |
+| PLAYER_PCOUNT        | int unsigned         | YES  |     | 0       |       |
+| PLAYER_CAPTAIN_COUNT | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TWINS         | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TLOSSES       | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TDRAWS        | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_SCORED    | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_FOR       | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_AGAINST   | int unsigned         | YES  |     | 0       |       |
+| PLAYER_AVG_RATING    | double(2,1) unsigned | YES  |     | 0.0     |       |
++----------------------+----------------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
++-------------------+----------------------+------+-----+---------+-------+
+| Field             | Type                 | Null | Key | Default | Extra |
++-------------------+----------------------+------+-----+---------+-------+
+| GAME_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| TEAM_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| USER_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| PARC_POSITION     | varchar(5)           | NO   |     | NULL    |       |
+| PARC_GOALS_SCORED | int unsigned         | NO   |     | 0       |       |
+| PARC_CAPTAIN      | tinyint(1)           | YES  |     | 0       |       |
+| PARC_RATING       | double(2,1) unsigned | NO   |     | 0.0     |       |
++-------------------+----------------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
++----------------+--------------+------+-----+----------+----------------+
+| Field          | Type         | Null | Key | Default  | Extra          |
++----------------+--------------+------+-----+----------+----------------+
+| TEAM_ID        | int unsigned | NO   | PRI | NULL     | auto_increment |
+| TEAM_NAME      | varchar(250) | NO   |     | NULL     |                |
+| TEAM_LOGO      | varchar(10)  | YES  |     | team.jpg |                |
+| TEAM_FOUNDED   | date         | NO   |     | NULL     |                |
+| TEAM_PCOUNT    | int unsigned | YES  |     | 0        |                |
+| TEAM_WINS      | int unsigned | YES  |     | 0        |                |
+| TEAM_LOSSES    | int unsigned | YES  |     | 0        |                |
+| TEAM_DRAWS     | int unsigned | YES  |     | 0        |                |
+| TEAM_G_FOR     | int unsigned | YES  |     | 0        |                |
+| TEAM_G_AGAINST | int unsigned | YES  |     | 0        |                |
+| TEAM_G_DIFF    | int          | YES  |     | 0        |                |
+| TEAM_WIN_RATE  | double(4,2)  | YES  |     | 0.00     |                |
+| USER_ID        | int unsigned | NO   | MUL | NULL     |                |
++----------------+--------------+------+-----+----------+----------------+
+13 rows in set (0.00 sec)
+
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| GAME_ID    | int unsigned | NO   | PRI | NULL    |       |
+| TEAM_ID    | int unsigned | NO   | PRI | NULL    |       |
+| TEAM_SCORE | int          | NO   |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| GAME_ID   | int unsigned | NO   | PRI | NULL    | auto_increment |
+| USER_ID   | int unsigned | NO   | PRI | NULL    |                |
+| GAME_DATE | date         | NO   |     | NULL    |                |
+| GAME_TIME | time         | NO   |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+Database changed
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.03 sec)
+
++--------------+--------------+------+-----+-----------+----------------+
+| Field        | Type         | Null | Key | Default   | Extra          |
++--------------+--------------+------+-----+-----------+----------------+
+| USER_ID      | int unsigned | NO   | PRI | NULL      | auto_increment |
+| USER_PICTURE | varchar(100) | YES  |     | team.jpg  |                |
+| USER_FNAME   | varchar(100) | NO   |     | NULL      |                |
+| USER_LNAME   | varchar(100) | NO   |     | NULL      |                |
+| USER_AGE     | int unsigned | YES  |     | 0         |                |
+| USER_DOB     | date         | NO   |     | NULL      |                |
+| USER_TYPE    | varchar(14)  | NO   |     | spectator |                |
++--------------+--------------+------+-----+-----------+----------------+
+7 rows in set (0.00 sec)
+
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| USER_ID        | int unsigned | NO   | PRI | NULL    |       |
+| MOFF_REFEREE   | tinyint(1)   | YES  |     | 1       |       |
+| MOFF_ORGANIZER | tinyint(1)   | YES  |     | 1       |       |
++----------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
++----------------------+----------------------+------+-----+---------+-------+
+| Field                | Type                 | Null | Key | Default | Extra |
++----------------------+----------------------+------+-----+---------+-------+
+| USER_ID              | int unsigned         | NO   | PRI | NULL    |       |
+| PLAYER_FOOT          | char(1)              | YES  |     | R       |       |
+| PLAYER_PCOUNT        | int unsigned         | YES  |     | 0       |       |
+| PLAYER_CAPTAIN_COUNT | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TWINS         | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TLOSSES       | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TDRAWS        | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_SCORED    | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_FOR       | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_AGAINST   | int unsigned         | YES  |     | 0       |       |
+| PLAYER_AVG_RATING    | double(2,1) unsigned | YES  |     | 0.0     |       |
++----------------------+----------------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
++-------------------+----------------------+------+-----+---------+-------+
+| Field             | Type                 | Null | Key | Default | Extra |
++-------------------+----------------------+------+-----+---------+-------+
+| GAME_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| TEAM_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| USER_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| PARC_POSITION     | varchar(5)           | NO   |     | NULL    |       |
+| PARC_GOALS_SCORED | int unsigned         | NO   |     | 0       |       |
+| PARC_CAPTAIN      | tinyint(1)           | YES  |     | 0       |       |
+| PARC_RATING       | double(2,1) unsigned | NO   |     | 0.0     |       |
++-------------------+----------------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
++----------------+--------------+------+-----+----------+----------------+
+| Field          | Type         | Null | Key | Default  | Extra          |
++----------------+--------------+------+-----+----------+----------------+
+| TEAM_ID        | int unsigned | NO   | PRI | NULL     | auto_increment |
+| TEAM_NAME      | varchar(250) | NO   |     | NULL     |                |
+| TEAM_LOGO      | varchar(10)  | YES  |     | team.jpg |                |
+| TEAM_FOUNDED   | date         | NO   |     | NULL     |                |
+| TEAM_PCOUNT    | int unsigned | YES  |     | 0        |                |
+| TEAM_WINS      | int unsigned | YES  |     | 0        |                |
+| TEAM_LOSSES    | int unsigned | YES  |     | 0        |                |
+| TEAM_DRAWS     | int unsigned | YES  |     | 0        |                |
+| TEAM_G_FOR     | int unsigned | YES  |     | 0        |                |
+| TEAM_G_AGAINST | int unsigned | YES  |     | 0        |                |
+| TEAM_G_DIFF    | int          | YES  |     | 0        |                |
+| TEAM_WIN_RATE  | double(4,2)  | YES  |     | 0.00     |                |
+| USER_ID        | int unsigned | NO   | MUL | NULL     |                |
++----------------+--------------+------+-----+----------+----------------+
+13 rows in set (0.00 sec)
+
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| GAME_ID    | int unsigned | NO   | PRI | NULL    |       |
+| TEAM_ID    | int unsigned | NO   | PRI | NULL    |       |
+| TEAM_SCORE | int          | NO   |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| GAME_ID   | int unsigned | NO   | PRI | NULL    | auto_increment |
+| USER_ID   | int unsigned | NO   | PRI | NULL    |                |
+| GAME_DATE | date         | NO   |     | NULL    |                |
+| GAME_TIME | time         | NO   |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+Database changed
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.04 sec)
+
++--------------+--------------+------+-----+-----------+----------------+
+| Field        | Type         | Null | Key | Default   | Extra          |
++--------------+--------------+------+-----+-----------+----------------+
+| USER_ID      | int unsigned | NO   | PRI | NULL      | auto_increment |
+| USER_PICTURE | varchar(100) | YES  |     | team.jpg  |                |
+| USER_FNAME   | varchar(100) | NO   |     | NULL      |                |
+| USER_LNAME   | varchar(100) | NO   |     | NULL      |                |
+| USER_AGE     | int unsigned | YES  |     | 0         |                |
+| USER_DOB     | date         | NO   |     | NULL      |                |
+| USER_TYPE    | varchar(14)  | NO   |     | spectator |                |
++--------------+--------------+------+-----+-----------+----------------+
+7 rows in set (0.00 sec)
+
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| USER_ID        | int unsigned | NO   | PRI | NULL    |       |
+| MOFF_REFEREE   | tinyint(1)   | YES  |     | 1       |       |
+| MOFF_ORGANIZER | tinyint(1)   | YES  |     | 1       |       |
++----------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
++----------------------+----------------------+------+-----+---------+-------+
+| Field                | Type                 | Null | Key | Default | Extra |
++----------------------+----------------------+------+-----+---------+-------+
+| USER_ID              | int unsigned         | NO   | PRI | NULL    |       |
+| PLAYER_FOOT          | char(1)              | YES  |     | R       |       |
+| PLAYER_PCOUNT        | int unsigned         | YES  |     | 0       |       |
+| PLAYER_CAPTAIN_COUNT | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TWINS         | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TLOSSES       | int unsigned         | YES  |     | 0       |       |
+| PLAYER_TDRAWS        | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_SCORED    | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_FOR       | int unsigned         | YES  |     | 0       |       |
+| PLAYER_T_G_AGAINST   | int unsigned         | YES  |     | 0       |       |
+| PLAYER_AVG_RATING    | double(2,1) unsigned | YES  |     | 0.0     |       |
++----------------------+----------------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
++-------------------+----------------------+------+-----+---------+-------+
+| Field             | Type                 | Null | Key | Default | Extra |
++-------------------+----------------------+------+-----+---------+-------+
+| GAME_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| TEAM_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| USER_ID           | int unsigned         | NO   | PRI | NULL    |       |
+| PARC_POSITION     | varchar(5)           | NO   |     | NULL    |       |
+| PARC_GOALS_SCORED | int unsigned         | NO   |     | 0       |       |
+| PARC_CAPTAIN      | tinyint(1)           | YES  |     | 0       |       |
+| PARC_RATING       | double(2,1) unsigned | NO   |     | 0.0     |       |
++-------------------+----------------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
++----------------+--------------+------+-----+----------+----------------+
+| Field          | Type         | Null | Key | Default  | Extra          |
++----------------+--------------+------+-----+----------+----------------+
+| TEAM_ID        | int unsigned | NO   | PRI | NULL     | auto_increment |
+| TEAM_NAME      | varchar(250) | NO   |     | NULL     |                |
+| TEAM_LOGO      | varchar(10)  | YES  |     | team.jpg |                |
+| TEAM_FOUNDED   | date         | NO   |     | NULL     |                |
+| TEAM_PCOUNT    | int unsigned | YES  |     | 0        |                |
+| TEAM_WINS      | int unsigned | YES  |     | 0        |                |
+| TEAM_LOSSES    | int unsigned | YES  |     | 0        |                |
+| TEAM_DRAWS     | int unsigned | YES  |     | 0        |                |
+| TEAM_G_FOR     | int unsigned | YES  |     | 0        |                |
+| TEAM_G_AGAINST | int unsigned | YES  |     | 0        |                |
+| TEAM_G_DIFF    | int          | YES  |     | 0        |                |
+| TEAM_WIN_RATE  | double(4,2)  | YES  |     | 0.00     |                |
+| USER_ID        | int unsigned | NO   | MUL | NULL     |                |
++----------------+--------------+------+-----+----------+----------------+
+13 rows in set (0.00 sec)
+
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| GAME_ID    | int unsigned | NO   | PRI | NULL    |       |
+| TEAM_ID    | int unsigned | NO   | PRI | NULL    |       |
+| TEAM_SCORE | int          | NO   |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| GAME_ID   | int unsigned | NO   | PRI | NULL    | auto_increment |
+| USER_ID   | int unsigned | NO   | PRI | NULL    |                |
+| GAME_DATE | date         | NO   |     | NULL    |                |
+| GAME_TIME | time         | NO   |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
